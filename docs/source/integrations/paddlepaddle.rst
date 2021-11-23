@@ -11,9 +11,9 @@ derived from ``paddle.io.Dataset``.
 .. literalinclude:: ../../../docs/code/use_dataset_in_paddlepaddle.py
    :language: python
    :start-after: """Build a Segment class"""
-   :end-before:         # """"""
+   :end-before: """"""
 
-Using the following code to create a PyTorch dataloader and run it:
+Using the following code to create a PaddlePaddle dataloader and run it:
 
 .. literalinclude:: ../../../docs/code/use_dataset_in_paddlepaddle.py
    :language: python

@@ -11,9 +11,9 @@
 """This is the example code for using dataset in PaddlePaddle."""
 
 """Build a Segment class"""
-from PIL import Image
 from paddle.io import DataLoader, Dataset
 from paddle.vision import transforms
+from PIL import Image
 
 from tensorbay import GAS
 from tensorbay.dataset import Dataset as TensorBayDataset
@@ -40,6 +40,8 @@ class MNISTSegment(Dataset):
         return image_tensor, self.category_to_index[data.label.classification.category]
 
 
+""""""
+
 """Build a dataloader and run it"""
 ACCESS_KEY = "Accesskey-*****"
 
@@ -48,7 +50,7 @@ normalization = transforms.Normalize(mean=[0.485], std=[0.229])
 my_transforms = transforms.Compose([to_tensor, normalization])
 
 train_segment = MNISTSegment(GAS(ACCESS_KEY), segment_name="train", transform=my_transforms)
-train_dataloader = DataLoader(train_segment, batch_size=4, shuffle=True, num_workers=4)
+train_dataloader = DataLoader(train_segment, batch_size=4, shuffle=True, num_workers=0)
 
 for index, (image, label) in enumerate(train_dataloader):
     print(f"{index}: {label}")
